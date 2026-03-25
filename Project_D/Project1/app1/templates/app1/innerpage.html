@@ -1,0 +1,502 @@
+<!doctype html>
+{% load static %}
+{% block content %}
+<html lang="en">
+  <head>
+    <title>LevelUp</title>
+    <link rel="icon" type="images/x-icon" href="{% static 'images/logo.jpeg' %}">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div>
+    <section class="ftco-section">
+        <!-- <div class="container"> -->
+        <!-- <div class="row justify-content-center"> -->
+        <!-- <div class="col-md-6 text-center mb-5"> -->
+        
+        <!-- </div>
+        </div>
+        </div> -->
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar  ftco-navbar-light justify-content-end bg-dark" id="ftco-navbar" >
+        <!-- <div class="container"> -->
+        <a class="navbar-brand"  href="{% url 'app1:index' %}"><img src="{% static 'images/Levelup1.png' %}" alt="" width="160px" height="50px" ></a>
+          <a class="navbar-brand" ><img src="{% static 'images/python-logo.png' %}" alt="" width="60%" height="10%" style="float: right;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="{% url 'app1:index' %}" class="nav-link" style="color:white">Home</a></li>
+
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link"style="color:white">About</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" style="color:white">Menu</a></li>
+        <li class="nav-item"><a href="#" class="nav-link"style="color:white">Contact</a></li>
+        </ul>
+        </div>
+        <!-- </div> -->
+        </nav>
+        </section>
+        <script>
+          let currentQuestionIndex = 0;
+          let totalQuestions = 150;
+      
+          function showQuestion(index) {
+            let questions = document.getElementsByClassName("question");
+            for (let i = 0; i < questions.length; i++) {
+              questions[i].style.display = "none";
+            }
+            questions[index].style.display = "block";
+          }
+      
+          function goToPreviousQuestion() {
+            if (currentQuestionIndex > 0) {
+              currentQuestionIndex--;
+              showQuestion(currentQuestionIndex);
+            }
+          }
+      
+          function goToNextQuestion() {
+            if (currentQuestionIndex < totalQuestions - 1) {
+              currentQuestionIndex++;
+              showQuestion(currentQuestionIndex);
+            }
+          }
+        </script>
+      </head>
+      <body>
+        <div class="d-md-flex h-md-100">
+        <div class=" col-md-6 overflow bg-light">
+          <div class="question"style="display:block;">
+            <div><h3 id="Get Started">Get Started</h3></div>
+            <div><h4 style="text-decoration: underline;">Python Install:</h4></div>
+            <div>Many PCs and MACS will have already Installed</div>
+            <div class="text">To check If you have python installed on windows PC,search in the start bar for python <br> or run the following on the Command Line(cmd.ece):</div> <br>
+            <div class="border bg-success">C:\Users\Your Name>python --version</div> <br>
+            <div class="text">To check if you have python installed on a Linux or Mac, then on linux open the command line or on Mac open the Terminal and type:</div> <br>
+            <div class="border bg-success">python --version</div> <br>
+            <div class="text">If you find that you do not have Python installed on your computer, then you can download it for free from the following website: <a href="https://www.python.org/">https://www.python.org/</a></div> <br>
+            <div><h3 style="text-decoration: underline;">Python QuickStart</h3></div>
+            <div class="text">Python is an interpreted programming language, this means that as a developer you write Python (.py) files in a text editor and then put those files into the python interpreter to be executed.</div> <br>
+            <div class="text">The way to run a python file is like this on the command line:</div> <br>
+          </div>
+        <div class="question" style="display: block;">
+              <h5 id="demo" style="text-decoration: underline; line-height: 2;letter-spacing: 2px;"> Task</h5>
+              <div class="text" style="line-height: 2;letter-spacing: 2px;">Here is a sample line of code that can be executed in Python:</div><br>
+              <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;"><br> print("Hello,World") <br> <br></div><br>
+              <div class="text" style="line-height: 2;letter-spacing: 2px;"> You can just as easily store a string as a variable and then print it to stdout:</div><br>
+              <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;"> <br> my_string = "Hello, World!" <br> print(my_string) <br> <br></div><br>
+              <div class="text" style="line-height: 2;letter-spacing: 2px;">  The above code will print Hello, World! on your screen.Try it yourself in the editor below!</div><br>
+              <h5 style="line-height: 2;letter-spacing: 2px;">Input Format</h5><br>
+              <div class="text" style="line-height: 2;letter-spacing: 2px;"> You do not need to read any input in this challenge.</div><br>
+              <h5 style="line-height: 2;letter-spacing: 2px;"> Output Format</h5><br>
+              <div class="text" style="line-height: 2;letter-spacing: 2px;"> Print Hello, World! to stdout:</div><br>
+              <h5 style="line-height: 2;letter-spacing: 2px;"> Sample Output 0</h5><br>
+              <div class="border bg-light "> <br> Hello,World! <br> <br> </div> <br>
+          
+          <!-- <input type="text"> -->
+        </div>
+        <div class="question" style="display: none;">
+          <!-- <h2>Question 2</h2> -->
+          <div id="Data types"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Data Types</h2></div>
+                            <div class="text" style="line-height: 2;letter-spacing: 2px;">In programming,data type is a important concept <br> Variables can store data of different types,and different types can do different things.</div>
+                            <div class="text" style="line-height: 2;letter-spacing: 2px;">In Python we have 5 data types 1.None type 2.Numeric type 3.Sequences 4.Sets 5.Dictionary</div>
+                            <div class="text" style="line-height: 2;letter-spacing: 2px;"><h4 style="text-decoration: underline;">None type</h4></div>
+                            <div class="text" style="line-height: 2;letter-spacing: 2px;">An Object does not contain the value is called None type</div>
+                            <div class="text" style="line-height: 2;letter-spacing: 2px;"><h4 style="text-decoration: underline;">Numeric Type</h4></div>
+                            <div class="text" style="line-height: 2;letter-spacing: 2px;">In Numeric we have 3 different data types 1.Integer 2.Floating 3.Complex</div>
+                            <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice this code</h4></div>
+                            <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;">a=10 <br> print(a) <br> print(type(a)) </div>
+                            <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice the code</h4></div>
+                            <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;">a=10.2 <br> print(a) <br> print(type(a))</div>
+                            <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice the code</h4></div>
+                            <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;">a=2+5j <br> print(a) <br> print(type(a)). <br> Here '2' is called Real Part <br> '5j' is called imaginary part <br> 'j' is called standered coeficient</div>
+                            <div class="text"><h4 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Sequences</h4></div>
+                            <div class="text" style="line-height: 2;letter-spacing: 2px;">We have 4 data types 1.String 2.List 3.Tuple 4.Range</div>
+          <!-- <input type="text"> -->
+        </div>
+        <div class="question" style="display: none;">
+          <div id="Variables"><h2 style="text-decoration: underline; line-height: 2;letter-spacing: 2px;">Variables</h2> <span style="line-height: 2;letter-spacing: 2px;">Variables are containers for storing data values</span></div>
+          <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Creating Variables</h2></div><br>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">Python has no command for declaring a variable.</div><br>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">A variable is created the moment you first assign a value to it.</div><br>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">Python has no command for declaring a variable.</div><br>
+          <div class="border bg-light "><h2 style="text-decoration: underline; line-height: 2;letter-spacing: 2px;">Try to practice the code</h2>
+          <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">&nbsp;x=5<br> &nbsp; y='john'  <br>&nbsp; print(x) <br> &nbsp; print(y) </div></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;"> Variables do not need to be declared with any particular type, and can even change type after they have been set.</div><br>
+          <div class="border bg-light "><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</h2>
+            <div class="border bg-light;line-height: 2;letter-spacing: 2px;">&nbsp; x=4  <span id="x" >&nbsp; # x is of int type</span><br>&nbsp; x="sally"  <span id="x">&nbsp;# x is now of type str</span> <br>&nbsp;print(x)  </div></div>
+            <!-- ---------------------------- -->
+             <div class="text" style="line-height: 2;letter-spacing: 2px;">Get the type</div><br>
+            <div class="text" style="line-height: 2;letter-spacing: 2px;">You can get the data type of a variable with the type() function.</div><br>
+        
+           <div class="border bg-light "><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</h2>
+            <div class="border bg-light;line-height: 2;letter-spacing: 2px;">&nbsp;x=5<br>y='john'  <br>print(type(x)) <br> print(type(y)) </div></div>
+          
+        </div>
+        <div class="question" style="display: none;">
+          <div id="Strings"><h4 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Srtings</h4></div>
+                           <div class="text" style="line-height: 2;letter-spacing: 2px;">Strings are set of sequences enclosed in between the single('') or Double("") quetations. <br> Strings are written in between the (). <br> Strings are immutable we can't change and delete.</div>
+                           <div class="text" style="line-height: 2;letter-spacing: 2px;">In String we have some methods Index,Slicing,Strip,Find,Count,Upper,Lower,title,Replace,Concatination...</div>
+                           <div class="text" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;"><h4>Indexing</h4></div>
+                           <div class="border bg-light" style="text-decoration: underline;">Try to practice the code</div>
+                           <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">s='Python Training at Levelup' <br> print(s) <br> print(type(s)) <br> print(s[0]) Ans:'p' <br> print(s[5]) Ans:'n' <br> print(s[8]) Ans:'s'</div> <br>
+                           <div class="text" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;"><h4>Slicing</h4></div>
+                           <div class="border bg-light" style="text-decoration: underline;">Try to practice the code</div>
+                           <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">s='Python Training at Levelup' print(s[0:5]) Ans:'Python' <br> print(s[1:3]) Ans:'yth' <br> print(s[::-1]) Ans:'puleveL ta gniniarT'</div> <br>
+                           <div class="text" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;"><h4>Strip</h4></div>
+                           <div class="border bg-light" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</div>
+                           <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;"> &nbsp;s=' Python is very easy '&nbsp; print(s) print(s.strip()) Ans:' Python is vary esay ' print(s.lstrip()) Ans:'Python is vary esay ' print(s.rstrip()) Ans:'Python is vary esay '</div>
+                           <div class="text" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;"><h4>Find</h4></div> <br>
+                           <div class="border bg-light" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</div>
+                           <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">s='Levelup' print(s.find('vel'))</div>
+                           <div class="text" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;"><h4>Count</h4></div> <br>
+                           <div class="border bg-light" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</div>
+                           <div class="border bg-light"styleline-height: 2;letter-spacing: 2px; >s='John is a tall boy' print(s.count('a)) Ans:2</div>
+                           <div class="text" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;"><h4>Replace</h4></div> <br>
+                           <div class="border bg-light" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</div>
+                           <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">s='Python' print(s.replace('python','Django'))</div>
+                           <div class="text" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;"><h4>Upper(),Lower(),Title()</h4></div> <br>
+                           <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">Try to practice the code</div>
+                           <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">s='Python' print(s.upper()) Ans:PYTHON <br> print(s.lower()) Ans:python <br> print(s.title()) Ans:Python</div> <br>
+                           <div class="text text-decoration: underline;line-height: 2;letter-spacing: 2px;"><h4>Split</h4></div> <br>
+                           <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">Try to practice the code</div>
+                           <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">s='my name is subhani i am studying degree' <br> print(s.split(',')) <br> print(s.stratwith('m')) </div> <br>
+                           <div class="text"style="text-decoration: underline;line-height: 2;letter-spacing: 2px;"><h4>Concatination</h4></div>
+                           <div class="text border bg-light" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</div>
+                           <div class="text border bg-light" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">a='python' b='at levelup' <br> print(a+b) Ans:'python at levelup' </div> <br>
+                           <div class="text" style="line-height: 2;letter-spacing: 2px;"><h4>Length</h4></div>
+                           <div class="text border bg-light"style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</div>
+                           <div class="text border bg-light" style=" text-decoration: underline;line-height: 2;letter-spacing: 2px;">s='levelup' <br> print(len(s)) Ans:7</div>
+                           <div><h4 style="line-height: 2;letter-spacing: 2px;">Formate Method</h4></div>
+                           <div class="text" style="line-height: 2;letter-spacing: 2px;">Try to practice the code</div>
+                           <div class="text" style="line-height: 2;letter-spacing: 2px;">age=22 <br> marks=83 <br> s='My name is kahja i am {}, marks are {}' <br> print(s.formate(age,marks))</div>
+        </div>
+        <div class="question" style="display: none;">
+          <div id="List"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">List</h2></div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;">Lists are used to store multiple items in a single variable. <br> Lists are one of 4 built-in data types in Python used to store collections of data, the other 3 are Tuple, Set, and Dictionary, all with different qualities and usage <br>Lists are created using square brackets:</div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;"><h4 style="text-decoration: underline;">Try to practice the code</h4></div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;">Create a List:</div>
+                         <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">lst = ["apple", "banana", "cherry"] <br> print(lst)</div>
+                         <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">List Items</h2></div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;">List items are ordered, changeable, and allow duplicate values.</div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;">List items are indexed, the first item has index [0], the second item has index [1] etc.</div>
+              
+                         <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Ordered</h2></div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;">When we say that lists are ordered, it means that the items have a defined order, and that order will not change.</div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;">If you add new items to a list, the new items will be placed at the end of the list.</div>
+                         <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Allow Duplicates</h2></div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;">Since lists are indexed, lists can have items with the same value:</div>
+              
+                         <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice the code</h4></div>
+                         <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;">lst = ["apple", "banana","cherry","apple","cherry"] <br> print(lst) <br> print(type(a)) <br> print(lst) </div>
+              
+                         <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">List Lenght</h2></div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;">To determine how many items a list has, use the len() function:</div>
+                         <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice the code</h4></div>
+                         <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;">lst = ["apple", "banana","cherry","apple","cherry"] <br> print(len(lst)) <br> print(type(a)) <br> print(lst) </div>
+              
+                         <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">The list() Constructor</h2></div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;">It is also possible to use the list() constructor when creating a new list.</div>
+                         <div class="border bg-light "><h4 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</h4></div>
+                         <div class="text" style="line-height: 2;letter-spacing: 2px;">Using the list() constructor to make a List:</div>
+                         <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;">lst = list(("apple", "banana","cherry","apple","cherry")) <br> print(lst)  </div>
+        </div>
+        <div class="question" style="display: none;">
+          <div id="Tuple"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Tuple</h2></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">Tuples are used to store multiple items in a single variable. <br>Tuple is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Set, and Dictionary, all with different qualities and usage. <br>A tuple is a collection which is ordered and unchangeable. <br>Tuples are written with round brackets.</div>
+          <div class="text"><h4 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</h4></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">Create a List:</div>
+      
+          <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;"><h4>Try to Practice the code</h4></div>
+          <div class="border bg-light "style="line-height: 2;letter-spacing: 2px;">tpl = ("apple", "banana","cherry","apple","cherry") <br> print(tpl) <br> print(type(a)) <br> print(lst) </div>
+      
+          <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Tuple Items</h2></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">Tuple items are ordered, unchangeable, and allow duplicate values. <br>Tuple items are indexed, the first item has index [0], the second item has index [1] etc.</div>
+          <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Ordered</h2></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">When we say that tuples are ordered, it means that the items have a defined order, and that order will not change.</div>
+          <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Unchangeable</h2></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">Tuples are unchangeable, meaning that we cannot change, add or remove items after the tuple has been created.</div>
+          <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Allow Duplicates</h2></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">Since tuples are indexed, they can have items with the same value:</div>
+      
+          <div class="border bg-light "><h4 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</h4></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">Tuples allow duplicate values:</div>
+          <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;">tpl =("apple", "banana","cherry","apple","cherry") <br> print(tpl)  </div>
+      
+          <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Tuple Length</h2></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">To determine how many items a tuple has, use the len() function:</div>
+      
+          <div class="border bg-light "><h4 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</h4></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">Print the number of items in the tuple:</div>
+          <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;">tpl =("apple", "banana","cherry","apple","cherry") <br> print(len(tpl))  </div>
+      
+          <div class="text"><h2 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">type()</h2></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">From Python's perspective, tuples are defined as objects with the data type 'tuple':</div>
+      
+          <div class="border bg-light "><h4 style="text-decoration: underline;line-height: 2;letter-spacing: 2px;">Try to practice the code</h4></div>
+          <div class="text" style="line-height: 2;letter-spacing: 2px;">What is the data type of a tuple?</div>
+          <div class="border bg-light " style="line-height: 2;letter-spacing: 2px;">tpl =("apple", "banana","cherry","apple","cherry") <br> print(type(tpl))  </div>
+        </div>
+        <div class="question" style="display: none;">
+          <div id="Dictionaries" style="text-decoration: underline;line-height: 2;letter-spacing: 2px;"><h1>Dictionary</h1></div>
+                  <div style="line-height: 2;letter-spacing: 2px;"><b>A dictionary can be used for storing a group of elements in the form of keys and values.It can written in between the { }.</b></div>
+                  <div>
+                    
+                      <li style="line-height: 2;letter-spacing: 2px;">Every Element in a dictionary must be specified in the form of key-value pairs. <br> </li>
+                      <li style="line-height: 2;letter-spacing: 2px;">The values can be of any types</li>
+                      <li style="line-height: 2;letter-spacing: 2px;">Dictionary is mutable</li>
+                      <li style="line-height: 2;letter-spacing: 2px;">The keys can't be duplicated but the values can be duplicated</li>
+                      <li style="line-height: 2;letter-spacing: 2px;">The size of the dictionary can increased or decreased</li>
+                      <li style="line-height: 2;letter-spacing: 2px;">The dictionary does not allows indexing and slicing</li>
+                    
+                  </div>
+                  <div><b style="line-height: 2;letter-spacing: 2px;">A dictionary can be created in 2 ways</b></div>
+                  <div style="line-height: 2;letter-spacing: 2px;">1.A dict can be created by specifing the elements in a pair of {}.</div>
+                  <div style="line-height: 2;letter-spacing: 2px;"><b>Syntax for the creating a dict by using{}:</b></div>
+                  <div style="line-height: 2;letter-spacing: 2px;">dict_name={key1:value,key2:value,key3:value,.....}</div> <br>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice the code:</h4></div>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">
+                    dict1={} <br>
+                    dict2={1:56,2:78,3:93,5:65} <br>
+                    dict3={1:'xyz',2:'mno',3:'pqr'} <br>
+                    dict4={(1,6):56,(2,5):78,(3,9):96} <br>
+                  </div>
+                  <div style="line-height: 2;letter-spacing: 2px;">2.A dictionary can be created with the help of dict{}.</div>
+                  <div style="line-height: 2;letter-spacing: 2px;">dict_name=dict(sequence)</div>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice the code</h4></div>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">
+                    dict1=dict{} <br>
+                    dict2=dict({1:55,2:66,3:88,4:68}) <br>
+                  </div>
+                  <div><h4 style="line-height: 2;letter-spacing: 2px;">Methods of dict:</h4></div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;">Python has a set of built-in methods that you can use on dictionaries.</div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;">
+                    clear()   : Removes all the elements from the dictionary <br>
+                    copy()    : Returns a copy of the dictionary <br>
+                    fromkeys(): Returns a dictionary with the specified keys and value <br>
+                    get()     : Returns the value of the specified key <br>
+                    items()   : Returns a list containing a tuple for each key value pair <br>
+                    keys()    :	Returns a list containing the dictionary's keys <br>
+                    pop)()    :	Removes the element with the specified key <br>
+                    popitem() :	Removes the last inserted key-value pair <br>
+                  </div>
+                  
+                  <div ><h4>Get()</h4></div> <br>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">Try to practice the code</div>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">dict={1:45,2:56,3:67,4:89} <br>
+                    print(dict.get(1)) Ans:45 <br>
+                    print(dict.get(5)) Ans:None
+                  </div> <br>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">Update()</div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;">This method is used to add some key-values pairs into the dict or can be used to update the value of a specfied key.</div> <br>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">Try to practice the code:</div> <br>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">d1={1:45,2:56,3:67,4:89}
+                    d2={5:90,6:34,2:99} <br>
+                    print(d1) Ans:1:45,2:56,3:67,4:89 <br>
+                    d1.update(d2) <br>
+                    print(d1) Ans:{1:45,2:99,3:67,4:89,5:90}
+                  </div> <br>
+                  <div><h4 style="line-height: 2;letter-spacing: 2px;">Popitem():</h4></div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;">This method will remove an arbitary key-value from the dict.</div> <br>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">Try to practice the code:</div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;">data={1:45,2:56,3:67,4:89}</div> <br>
+                  print(data) <br>
+                  data.popitem()
+                  print(data) Ans:1:45,2:56,3:67 <br>
+                  <div style="line-height: 2;letter-spacing: 2px;"><h4>pop()</h4></div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;">This method is used to remove the specified key along with its value if avilable other we get key error.</div> <br>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice the code</h4></div>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">data={1:45,2:56,3:67,4:89} <br>
+                  print(data) Ans:1:45,2:56,3:67,4:89 <br>
+                  data.pop(1) <br>
+                  print(data) Ans:2:56,3:67,4:89 <br>
+                  data.pop(5) <br>
+                  print(data) Ans:keyerror</div> <br>
+                  <div><h4 style="line-height: 2;letter-spacing: 2px;">getitems</h4></div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;">The items() method will return each item in a dictionary, as tuples in a list.</div> <br>
+                  <div  class="border bg-light" style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice the code</h4></div>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">Get a list of the key:value pairs <br>
+                    x = thisdict.items() <br>
+                    car = {
+                      "brand": "Ford",
+                      "model": "Mustang",
+                      "year": 1964
+                      } <br>
+                      
+                      x = car.items() <br>
+                      
+                      print(x) #before the change <br>
+                      
+                      car["year"] = 2020 <br>
+                      
+                      print(x) #after the change</div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;"><h4>get keys()</h4></div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;">To determine if a specified key is present in a dictionary use the in keyword:</div>
+                  <br>
+                  <div style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice the code:</h4></div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;">thisdict = {
+                    "brand": "Ford",
+                    "model": "Mustang",
+                    "year": 1964
+                  } <br>
+                  if "model" in thisdict: <br>
+                    print("Yes, 'model' is one of the keys in the thisdict dictionary")</div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;"><h4>Nested Dictionary:</h4></div> <br>
+                  <div style="line-height: 2;letter-spacing: 2px;">A dictionary can contain dictionaries, this is called nested dictionaries.</div> <br>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;"><h4>Try to practice the code:</h4> Create a dictionary that contain three dictionaries:</div>
+                  <div class="border bg-light" style="line-height: 2;letter-spacing: 2px;">myfamily = {
+                    "child1" : {
+                      "name" : "Emil",
+                      "year" : 2004
+                    }, <br>
+                    "child2" : {
+                      "name" : "Tobias",
+                      "year" : 2007
+                    }, <br>
+                    "child3" : {
+                      "name" : "Linus",
+                      "year" : 2011
+                    }
+                  }</div>
+        </div>
+        <div>
+        
+          <button onclick="goToPreviousQuestion()" class="btn btn-light border border-secondary" id="bu1">Previous</button>
+          <button onclick="goToNextQuestion()" class="float-right btn btn-light border border-primary" id="bu2">Next</button>
+        </div>
+      </div>
+      <style>
+        #bu1:hover{
+          background-color: #e8e337;
+        }
+        #bu2:hover{
+          background-color: #728Fce;
+        }
+      </style>
+        <script>
+          showQuestion(currentQuestionIndex);
+          </script>
+      
+
+
+
+
+    
+        <!---------------------------------Right side part --------------------------------->
+                     <div class="container-fluid  " >
+                        <div class="row">
+                          <div class="col-sm-12 ml-3 mr-5 mt-1 mb-1">
+                            <form action="/innerpage1/" method="post">
+                              {% csrf_token %}
+                              <div class="form-group row bg-light">
+                                <div class="">
+                                  <label for="comment1"><h4>Coding Area</h4></label>
+                                 <input type="button" value="Dark" onclick="Dark()" class="t1 btn btn-outline-dark">  
+                                 <input type="button" value="Light" onclick="Light()" class="t1 btn btn-outline-primary">
+                                  <textarea class="form-control " id="comment1" cols="57" rows="10" name="code_area"   style="border:3px solid rgb(198, 186, 186);;  letter-spacing: 1px; font-family: 'Lucida Console'; font-size: 20px;  " 
+                                   onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{code}}</textarea>
+                                </div> 
+                                <div class="form-group row">
+                                    <div class="col-sm-7 ml-3 p-1">
+                                        <input type="button" class="btn btn-outline-danger" value="Reset" onclick="javascript:eraseText();">
+                                    </div>
+                                    <span class="pl-5 ml-5 mt-1">
+                                      <button  class="btn btn-outline-success float-right  "type="submit"  style="color:black ">Run Your Code</button>
+                                      </span>
+                                <div class="form-group row">
+                                  <div class="ml-4">
+                                    <label for="comment2"><h4>Input</h4></label>
+                                    <textarea class="form-control " cols="44" id="comment2" rows="10" name="input_area" style="border:3px solid rgb(198, 186, 186);">{{input}}</textarea>
+                                  </div>
+                                  </div> &nbsp;
+                                  <div class="form-group row">
+                                  <div class="ml-4">
+                                    <label for="comment3"><h4>Output</h4></label>
+                                    <textarea class="form-control " cols="44" id="comment3" rows="10" name="output_area" style="border:3px solid rgb(198, 186, 186);">{{output}}</textarea>
+                                  </div>
+                                  </div>
+                                  
+                                  </div>
+                                  </div>
+                            </form>
+                  
+                          </div>
+                        </div>
+                      </div>
+                  
+      
+    </div>
+    </div>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .overflow{
+          overflow:scroll;
+          overflow-y:scroll;
+          height: 700px;
+          width: 100px;
+        }
+        body{
+          overflow-x: hidden;
+        }
+        
+      .t1{
+        float: right;
+        margin-right: 18px;
+      }
+    .pr{
+      text-decoration: none;
+      list-style-type:none;
+    }
+    li{
+      padding: 10px;
+    }
+    
+    
+    
+    </style>
+          
+    <script>
+      
+        function eraseText() {
+          document.getElementById("comment1").value = "";
+          document.getElementById("comment2").value = "";
+          document.getElementById("comment3").value = "";
+          
+      }
+    
+      function Dark(){
+        document.getElementById("comment1").style.backgroundColor="Black";
+        document.getElementById('comment1').style.color='white';
+        document.getElementById("comment2").style.backgroundColor="Black";
+        document.getElementById("comment2").style.color='white';
+        document.getElementById("comment3").style.backgroundColor="Black";
+        document.getElementById('comment3').style.color='white';
+      }
+      function Light(){
+        document.getElementById("comment1").style.backgroundColor="white" ;
+        document.getElementById("comment1").style.color="black";
+        document.getElementById("comment2").style.backgroundColor="white";
+        document.getElementById('comment2').style.color='black';
+        document.getElementById("comment3").style.backgroundColor="white";
+        document.getElementById('comment3').style.color='black';
+        
+      }
+        </script>
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      </body>
+    </html>
+    {% endblock %}

@@ -1,0 +1,303 @@
+
+<!doctype html>
+{% load static %}
+
+<html lang="em">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>LevelUp</title>
+  <link rel="icon" type="images/x-icon" href="{% static 'images/logo.jpeg' %}">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic&amp;display=swap">
+  <link rel="stylesheet" href="static/fonts/fontawesome-all.min.css">
+  <link rel="stylesheet" href="static/fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="static/fonts/fontawesome5-overrides.min.css">
+  <link rel="stylesheet" href="static/css/aos.min.css">
+  <link rel="stylesheet" href="static/css/baguetteBox.min.css">
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand pl-4" href="{% url 'app1:index' %}"><img src="{% static 'images/levelup.webp'%}" alt="" width="150px" height="50px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  href="{% url 'app1:index' %}"id="hover-underline-animation">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'app1:team' %}" id="hover-underline-animation">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'app1:contact' %}" id="hover-underline-animation">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{% url 'app1:register' %}" id="hover-underline-animation">Register</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'app1:logout' %}"id=" hover-underline-animation" style="color:blue">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'app1:login' %}" id="hover-underline-animation">Login</a>
+          </li>
+          {% endif %}
+         
+      </div>
+    </div>
+  </nav>
+
+{% block content %}
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="57">
+
+  <header class="text-center text-white d-flex masthead" style="background-image: url('/static/images/header .jpeg')">
+      <div class="container my-auto">
+          <div class="row">
+              <div class="col-lg-10 mx-auto">
+                  <h1 class="text-uppercase"><strong><br><strong>LET'S CODE IN PYTHON</strong><br><br></strong></h1>
+                  <hr>
+              </div>
+          </div>
+          <div class="col-lg-8 mx-auto">
+              <p class="text-faded mb-5"><br><span style="color: rgba(255, 255, 255, 0.698);">We can help you execute your python codes in a better way!</span><br><br></p><a class="btn btn-primary btn-xl" role="button" href="#">Find Out More</a>
+          </div>
+      </div>
+  </header>
+  <section id="about" class="bg-primary">
+      <div class="container">
+          <div class="row">
+              <div class="col offset-lg-8 text-center mx-auto" data-aos="zoom-in">
+                  <h2 class="text-white section-heading">We've got what you need!</h2>
+                  <hr class="light my-4">
+                  <p class="text-faded mb-4"><br><span style="color: rgba(255, 255, 255, 0.698);">Don't worry about installing Python,<br> Code on our interpreter&nbsp;</span><br><br></p><a class="btn btn-light btn-xl" role="button" href="{% url 'app1:register' %}">Get Started!</a>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section data-aos="fade-right" id="services" class="text-white bg-dark">
+      <div class="container ">
+          <div class="row">
+              <div class="col-lg-12 text-center" data-aos="fade-down">
+                  <h2 class="section-heading ">At Your Service - Features of Our Interpreter</h2>
+                  <hr class="my-4">
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6 col-lg-3 text-center" data-aos="fade-right">
+                  <div class="mx-auto service-box mt-5"><i class="fas fa-book fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-once="true"></i>
+                      <h3 class="mb-3">Study Templates</h3>
+                      <p class="text-muted mb-0" >We have a Study cum Interpreter feature, user can fetch solutions as well as code!</p>
+                  </div>
+              </div>
+              <div class="col-md-6 col-lg-3 text-center" data-aos="fade-right">
+                  <div class="mx-auto service-box mt-5"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="200" data-aos-once="true" class="fa-4x text-primary mb-3 sr-icons">
+                          <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z" fill="currentColor"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill="currentColor"></path>
+                      </svg>
+                      <h3 class="mb-3">Dark Mode</h3>
+                      <p class="text-muted mb-0">You can use this theme at night for your better eye health!</p>
+                  </div>
+              </div>
+              <div class="col-md-6 col-lg-3 text-center" data-aos="fade-right">
+                  <div class="mx-auto service-box mt-5"><i class="fa fa-user-plus fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="400" data-aos-once="true"></i>
+                      <h3 class="mb-3">Beginner's Boon</h3>
+                      <p class="text-muted mb-0">You can use our interpreter to study and its good understandable for the beginners in python.</p>
+                  </div>
+              </div>
+              <div class="col-md-6 col-lg-3 text-center" data-aos="fade-right">
+                  <div class="mx-auto service-box mt-5"><i class="fa fa-laptop fa-4x text-primary mb-3 sr-icons" data-aos="fade" data-aos-duration="200" data-aos-delay="600" data-aos-once="true"></i>
+                      <h3 class="mb-3">Compatibility</h3>
+                      <p class="text-muted mb-0">You can use our interpreter on any device and and its compatible with Windows, Linux, Mac etc.&nbsp;</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <div class="row">
+    <div class="col-lg-12 text-center" data-aos="fade-down"> <br><br> <br>
+        <h2 class="section-heading" style="color:#f05f40">Areas Where Python Excells </h2>
+        <hr class="my-4">
+    </div>
+  <section id="portfolio" class="p-0">
+      <div class="container-fluid p-0">
+          <div class="row g-0 popup-gallery">
+              <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="{% static 'images/fullsize/1.png' %}"><img class="img-fluid" src="{% static 'images/thumbnails/1.jpeg' %}"><div class="portfolio-box-caption">
+  <div class="portfolio-box-caption-content">
+      <div class="project-category text-faded"><span>Category</span></div>
+      <div class="project-name"><span>Data Analysis</span></div>
+  </div>
+</div></a></div>
+              <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="{% static 'images/fullsize/2.png' %}"><img class="img-fluid" src="{% static 'images/thumbnails/2.jpeg' %}">
+                      <div class="portfolio-box-caption">
+                          <div class="portfolio-box-caption-content">
+                              <div class="project-category text-faded"><span>Category</span></div>
+                              <div class="project-name"><span>Data Science</span></div>
+                          </div>
+                      </div>
+                  </a></div>
+              <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="{% static 'images/fullsize/3.jpeg' %}"><img class="img-fluid" src="{% static 'images/thumbnails/3.jpeg' %}">
+                      <div class="portfolio-box-caption">
+                          <div class="portfolio-box-caption-content">
+                              <div class="project-category text-faded"><span>Category</span></div>
+                              <div class="project-name"><span>Web Development</span></div>
+                          </div>
+                      </div>
+                  </a></div>
+                  <hr class="my-4">
+              <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="{% static 'images/fullsize/4.jpeg' %}"><img class="img-fluid" src="{% static 'images/thumbnails/4.jpeg' %}">
+                      <div class="portfolio-box-caption">
+                          <div class="portfolio-box-caption-content">
+                              <div class="project-category text-faded"><span>Category</span></div>
+                              <div class="project-name"><span>Finance &amp; Trading</span></div>
+                          </div>
+                      </div>
+                  </a></div>
+              <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="{% static 'images/fullsize/5.jpeg' %}"><img class="img-fluid" src="{% static 'images/thumbnails/5.jpeg' %}">
+                      <div class="portfolio-box-caption">
+                          <div class="portfolio-box-caption-content">
+                              <div class="project-category text-faded"><span>Category</span></div>
+                              <div class="project-name"><span>Machine Learning</span></div>
+                          </div>
+                      </div>
+                  </a></div>
+              <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="{% static 'images/fullsize/6.jpeg' %}"><img class="img-fluid" src="{% static 'images/thumbnails/6.jpeg' %}">
+                      <div class="portfolio-box-caption">
+                          <div class="portfolio-box-caption-content">
+                              <div class="project-category text-faded"><span>Category</span></div>
+                              <div class="project-name"><span>Artificial Intelligence</span></div>
+                          </div>
+                      </div>
+                  </a></div>
+          </div>
+      </div>
+  </section>
+  <hr class="my-4">
+  <section id="contact" >
+      <div class="container">
+          <div class="row" data-aos="zoom-in-down">
+              <div class="col-lg-8 text-center mx-auto">
+                  <h2 class="section-heading" style="color:#f05f40">Let's Get In Touch!</h2>
+                  <hr class="my-4">
+                  <p class="mb-5">Facing any issues? Don't worry we are there!</p>
+              </div>
+          </div>
+          <div class="row" data-aos="zoom-in-down">
+              <div class="col-lg-4 text-center ms-auto"><i class="fa fa-phone fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-once="true"></i>
+                  <p>+919908405863<br>+917337266011</p>
+              </div>
+              <div class="col-lg-4 text-center me-auto"><i class="fa fa-envelope fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300" data-aos-once="true"></i>
+                  <p><a href="mailto:your-email@your-domain.com">defenders.levelup@gmail.com</a></p>
+              </div>
+              <div class="col-lg-12 offset-lg-0">
+                  <p class="fs-4 text-center">Social Networks<br><br><i class="fab fa-facebook" style="font-size: 39px;"></i>&nbsp;&nbsp;<i class="fab fa-instagram" style="font-size: 39px;"></i>&nbsp;&nbsp;<i class="fab fa-twitter" style="font-size: 39px;"></i>&nbsp;&nbsp;<i class="fab fa-youtube" style="font-size: 39px;"></i><br><br></p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/aos.min.js"></script>
+  <script src="static/js/bs-init.js"></script>
+  <script src="static/js/baguetteBox.min.js"></script>
+  <script src="static/js/creative.js"></script>
+  <style>
+    #hover-underline-animation {
+      display: inline-block;
+      position: relative;
+      color:blue;
+    }
+    
+    #hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color:gold;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    
+    #hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  
+  /*  */
+  .h {
+      padding-top: 100px;
+      font-size: 40px;
+      letter-spacing: 2px;
+      line-height: 90px;
+      text-transform: capitalize;
+      font-family: Arial, Helvetica, sans-serif;
+  } 
+  
+  .navbar-nav li a {
+      font-family: initial;
+      font-size: 1.5em;
+      color: white;
+      text-transform: none;
+      font-weight: 300px;
+      z-index: 996;
+  
+  }
+  
+  .social > a{
+      position: relative;
+      opacity: 0.7;
+      padding: 5px;
+  
+  }
+  .social > a:hover{
+      text-decoration: none;
+      animation: goup 20s;
+  }
+  @keyframes goup{
+  from{
+      bottom:0px;
+  }
+  to{
+      bottom: 200px;
+      opacity: 100;
+  }
+  }
+  .h6 >.float-sm-left{
+      font-size: 5px;
+  }
+  .social > .h6 > .float-sm-right{
+      font-size: 15px;
+  }
+  
+  </style>
+  <style>
+    .a{
+        border-radius:50%;
+    width:70px;
+    height:70px;
+    background:black;
+    position:absolute;
+    top:-30px;
+    
+    }
+    .b{
+        border-top:1px solid;
+  
+    }
+  </style>
+  
+   
+  
+  </html>
+  {% endblock %}  

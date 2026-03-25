@@ -1,0 +1,176 @@
+{% extends 'app1/index.html' %}
+{% block content %}
+
+{% load static %}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/Team.css' %}">
+<br>
+<br><br> 
+    <div class="section_our_solution">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="our_solution_category">
+              <div class="solution_cards_box">
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  
+                  <div class="solu_title">
+                    <h3>Subhani</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>
+                    Email: <a href="mailto:sksubhani1326@gmail.com">sksubhani1326@gmail.com</a> <br>
+                    Phone No:6301767025
+                    </p>
+                    <button type="button" class="read_more_btn">Read More</button>
+                  </div>
+                </div>
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="solu_title">
+                    <h3>Akhil</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>
+                      Email: <a href="mailto:akhilroy.sangem@gmail.com">akhilroy.sangem@gmail.com</a> <br>
+                      Phone No:9908405863
+                    </p>
+                    <button type="button" class="read_more_btn">Read More</button>
+                  </div>
+                </div>
+              </div>
+              <div class="solution_cards_box sol_card_top_3">
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="solu_title">
+                    <h3>Khaja Rahamathulla</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>
+                      Email: <a href="mailto:skkhajaramthullakhaja@gmail.com">skkhajaramthullakhaja@gmail.com</a > <br>
+                      Phone No:7337266011
+                    </p>
+                    <button type="button" class="read_more_btn">Read More</button>
+                  </div>
+                </div>
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="solu_title">
+                    <h3>Bishal</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>
+                      Email: <a href="mailto:bishalmargi@gmail.com">bishalmargi@gmail.com</a> <br>
+                      Phone No:6372745978
+                    </p>
+                    <button type="button" class="read_more_btn">Read More</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+      <div class="section_our_solution">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="our_solution_category">
+              <div class="solution_cards_box">
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="solu_title">
+                    <h3>Sharath</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>
+                      Email: <a href="mailto:nagavolusarathkumar@gmail.com">nagavolusarathkumar@gmail.com</a> <br>
+                      Phone No:6304289880
+                    </p>
+                    <button type="button" class="read_more_btn">Read More</button>
+                  </div>
+                </div>
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="solu_title">
+                    <h3>Surendra</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>
+                      Email: <a href="mailto:maidusurendra407@gmail.com">naidusurendra407@gmail.com</a> <br>
+                      Phone No:6281345040
+                    </p>
+                    <button type="button" class="read_more_btn">Read More</button>
+                  </div>
+                </div>
+              </div>
+              <div class="solution_cards_box sol_card_top_3">
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="solu_title">
+                    <h3>Mayank</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>
+                      Email: <a href="mailto:mayank@gmail.com">mayank@gmail.com</a> <br>
+                      Phone No:7218331116
+                    </p>
+                    <button type="button" class="read_more_btn">Read More</button>
+                  </div>
+                </div>
+               
+              <div class="solution_cards_box sol_card_top_3">
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="solu_title">
+                    <h3>Sony</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>
+                      Email: <a href="mailto:sonymarripudi@gmail.com">sonymarripudi@gmail.com</a>
+                <br>      Phone No:8897993431
+                    </p>
+                    <button type="button" class="read_more_btn">Read More</button>
+                  </div>
+                </div>
+   
+<style>
+   #hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color:blue;
+  }
+  
+  #hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:gold;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  #hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  a{
+    color: gold;
+  }
+  a:hover{
+    color:pink;
+  }
+</style>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  {% endblock %}
+
