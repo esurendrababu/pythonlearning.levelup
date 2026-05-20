@@ -1,0 +1,33 @@
+01
+Launch EC2 instance
+Start an Ubuntu EC2 instance and connect via SSH using your key pair.
+02
+Install dependencies
+Update apt and install Python, pip, MySQL client, and any required build tools.
+03
+Create virtual environment
+Inside your project folder run `python3 -m venv venv` and activate it with `source venv/bin/activate`.
+04
+Install Django and MySQL client
+Run `pip install django mysqlclient` to set up the framework and database connector.
+05
+Configure database settings
+Edit `settings.py` to point to your RDS endpoint, username, password, and port 3306.
+06
+Run migrations cleanly
+Execute `python manage.py migrate` to let Django create all required tables in MySQL.
+07
+Create superuser
+Run `python manage.py createsuperuser` to set up an admin account for the Django admin panel.
+08
+Run server on EC2
+Start with `python manage.py runserver 0.0.0.0:8000` so it listens on all interfaces.
+09
+Open EC2 security group
+Add inbound rule for TCP port 8000 to allow external access from your IP or 0.0.0.0/0 for testing.
+10
+Update ALLOWED_HOSTS
+In `settings.py` add your EC2 public IP or DNS name to `ALLOWED_HOSTS` to avoid DisallowedHost errors.
+11
+Access Django app
+Visit `http://<EC2-IP>:8000/` in your browser and log in with your superuser credentials.
