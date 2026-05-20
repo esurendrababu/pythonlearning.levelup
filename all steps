@@ -1,0 +1,130 @@
+Here’s a **step‑by‑step practice guide** you can follow from scratch to set up Django on EC2 with MySQL RDS. This document covers all 11 steps you listed, expanded with commands and context so you can rehearse the whole workflow:
+
+---
+
+## 📝 Django + MySQL on EC2 Practice Guide
+
+### 1. Launch EC2 instance
+- In AWS Console → EC2 → Launch Instance.
+- Choose **Ubuntu Server** (latest LTS).
+- Select instance type (t2.micro for practice).
+- Configure security group: allow SSH (22) from your IP.
+- Connect via SSH:
+  ```bash
+  ssh -i your-key.pem ubuntu@<EC2-PUBLIC-IP>
+  ```
+
+---
+
+### 2. Install dependencies
+Update and install essentials:
+```bash
+sudo apt update
+sudo apt install -y python3 python3-pip python3-venv mysql-client build-essential libmysqlclient-dev
+```
+
+---
+
+### 3. Create virtual environment
+Inside your project folder:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+### 4. Install Django and MySQL client
+```bash
+pip install django mysqlclient
+```
+
+Verify:
+```bash
+python -m django --version
+```
+
+---
+
+### 5. Configure database settings
+Edit `Project1/settings.py`:
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'studentdb',   # your RDS DB name
+        'USER': 'surendra',    # your DB username
+        'PASSWORD': 'yourpassword',
+        'HOST': 'studentdb.cvow8qeus77k.eu-north-1.rds.amazonaws.com',
+        'PORT': '3306',
+    }
+}
+```
+
+---
+
+### 6. Run migrations cleanly
+Let Django create tables:
+```bash
+python manage.py migrate
+```
+
+---
+
+### 7. Create superuser
+```bash
+python manage.py createsuperuser
+```
+Enter username, email, password.
+
+---
+
+### 8. Run server on EC2
+Bind to all interfaces:
+```bash
+python manage.py runserver 0.0.0.0:8000
+```
+
+---
+
+### 9. Open EC2 security group
+- Go to EC2 → Security Groups → Inbound rules.
+- Add rule: **TCP 8000**, source = your IP (or `0.0.0.0/0` for testing).
+
+---
+
+### 10. Update ALLOWED_HOSTS
+In `settings.py`:
+```python
+ALLOWED_HOSTS = ['<EC2-PUBLIC-IP>', '<EC2-PUBLIC-DNS>']
+```
+Example:
+```python
+ALLOWED_HOSTS = ['51.21.198.117', 'ec2-51-21-198-117.eu-north-1.compute.amazonaws.com']
+```
+
+---
+
+### 11. Access Django app
+Open your browser:
+```
+http://<EC2-PUBLIC-IP>:8000/
+```
+Log in with your superuser credentials at `/admin`.
+
+---
+
+## ⚡ Practice Notes
+- Don’t manually create tables in MySQL — always let Django migrations handle schema.
+- Use `--fake-initial` only if tables already exist with data you want to keep.
+- For production: move to **Gunicorn + Nginx** and serve on port 80/443 with HTTPS.
+- Keep a `requirements.txt`:
+  ```bash
+  pip freeze > requirements.txt
+  ```
+
+---
+
+This guide is your **repeatable checklist**. You can now reset your EC2/RDS and practice the entire flow again until it feels natural.  
+
+👉 Do you want me to extend this into a **production deployment guide (Gunicorn + Nginx + SSL)** so you can practice both dev and production setups end‑to‑end?
